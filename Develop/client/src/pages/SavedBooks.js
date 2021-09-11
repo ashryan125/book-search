@@ -1,6 +1,4 @@
-import React
-// { useState, useEffect } 
-from 'react';
+import React from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 import { useQuery, useMutation } from '@apollo/client';
 import { GET_ME } from '../utils/queries';
@@ -55,13 +53,13 @@ const SavedBooks = () => {
 
     try {
       // const response = await deleteBook(bookId, token);
-      const {data} = await removeBook({
+       await removeBook({
         variables: { bookId }
       });
-      
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
+
+      // if (!response.ok) {
+      //   throw new Error('something went wrong!');
+      // }
 
       // const updatedUser = await response.json();
       // setUserData(updatedUser);
@@ -103,6 +101,7 @@ const SavedBooks = () => {
                   <Button className='btn-block btn-danger' onClick={() => handleDeleteBook(book.bookId)}>
                     Delete this Book!
                   </Button>
+                  {error && <div>Book deletion failed</div>} 
                 </Card.Body>
               </Card>
             );
