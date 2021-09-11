@@ -81,7 +81,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 ---
 ## Screenshots
 ### Home Page View
-![Homepage](Develop/client/public/googleBookSearch.png)
+![Homepage](client/public/googleBookSearch.png)
 
 ---
 ## Contact
